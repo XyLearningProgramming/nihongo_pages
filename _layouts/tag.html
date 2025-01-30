@@ -14,9 +14,9 @@ layout: page
 
   <ul class="content ps-0">
       {% for post in page.posts %}
-      {% assign slug = post.data.header_slugs[page.tag] | uri_escape %}
+      {% assign tag = page.title | uri_escape %}
       <li class="d-flex justify-content-between px-md-3">
-        <a href="{{ post.url | relative_url }}#{{ slug }}">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}?from_tag={{ tag }}">{{ post.title }}</a>
         <span class="dash flex-grow-1"></span>
         {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
       </li>
