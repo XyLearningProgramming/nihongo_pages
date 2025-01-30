@@ -179,39 +179,4 @@ script_includes:
   <!-- div.post-tail-wrapper -->
 </article>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // 1. Get the current URL
-    const urlParams = new URLSearchParams(window.location.search.replace('?',''));
-
-    // 2. Extract the 'from_tag' parameter
-    const fromTag = urlParams.get("from_tag");
-
-    if (fromTag) {
-      // 3. Remove the '～' mark
-      const sanitizedTag = fromTag.replace("～", "");
-
-      // 4. Find all <h4> elements and check their <strong> content
-      const allH4s = document.querySelectorAll("h4");
-      let targetElement = null;
-
-      allH4s.forEach((h4) => {
-        const strongTag = h4.querySelector("strong");
-        if (strongTag && strongTag.textContent.includes(sanitizedTag)) {
-          targetElement = h4; // Select the first matching h4 element
-          return; // Exit the loop early
-        }
-      });
-      if (targetElement) {
-        // Optional: Scroll to the element
-        targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
-
-        // Optional: Highlight the element
-        targetElement.style.backgroundColor = "#fffae6"; // Light yellow highlight
-        setTimeout(() => {
-          targetElement.style.backgroundColor = ""; // Remove highlight after 2 seconds
-        }, 2000);
-      }
-    }
-  });
-</script>
+<script src="{{ '/assets/js/posts-grammar-tag.js' | relative_url }}"></script>
