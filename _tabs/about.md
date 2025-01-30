@@ -4,5 +4,15 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+> ようこそ！
+> 
+> このサイトは、私のノートをまとめたものです。
+>
+> 日本語の勉強のために、コースを受けながら集めた内容が含まれています。
+>
+> 「タグ」タブでは、文法のポイントを整理しています。
+> 
+> 訪問してくれてありがとうございます。
+> 
+> どうぞご覧ください。
 {: .prompt-tip }
